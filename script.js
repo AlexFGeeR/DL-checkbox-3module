@@ -1,5 +1,7 @@
+// Сохраняем базовый путь к серверу.
 const BASE_URL = 'https://academy.directlinedev.com';
 
+// Данная функция нужна чисто для создания чекбокса с его уникальным id и color.
 const createCheckbox = (check) => {
     return `
     <label class="checkbox">
@@ -9,6 +11,7 @@ const createCheckbox = (check) => {
     `
 }
 
+// Данная функция нужна для того, чтобы перебрать полученные от сервера результаты и отрисовать каждый чекбокс.
 const renderCheckbox = (data) => {
     for (let check of data) {
         document.querySelector('.tags-wrapper').insertAdjacentHTML('beforeend', createCheckbox(check))

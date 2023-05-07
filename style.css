@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+/* Ниже приведен источник откуда бралась информация для данного примера. */
 /* source https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
 
+body {
+    /* Задаем красивый шрифт для примера. */
+    font-family: 'Oswald', sans-serif;
+    /* Задаем ширину рабочей области */
+    max-width: 1180px;
+    /* Выставляем контент по центру */
+    margin: 0 auto;
+    /* Выставляем текст по центру */
+    text-align: center;
+}
+
 .tags-wrapper {
+    /* Выстраиваем сетку с помощью флекс для полученных тегов. */
     display: flex;
+    /* Расстояние между элементами в строчке и столбцах ставим в 20px */
     gap: 20px;
+    /* Выравниваем контент относительно главной оси контейнера по центру. */
     justify-content: center;
 }
 
@@ -13,6 +29,7 @@
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
+    /* user-select используется, чтобы пользователь не мог выделить область. */
     user-select: none;
 }
 
@@ -34,18 +51,18 @@
     width: 25px;
     border-width: 3px;
     border-style: solid;
-    /* border-color from JS */
+    /* border-color мы будем давать инлайновым стилем через JS, а остальные свойства border подготавливаем заранее. */
     border-radius: 6px;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
+/* Элемент, когда чекбокс нажат */
 .checkbox__mark:after {
     content: "";
     position: absolute;
     display: none;
   }
 
-/* Show the checkmark when checked */
+/* Отображение при нажатии. */
 .checkbox__input:checked ~ .checkbox__mark:after {
     display: block;
 }
